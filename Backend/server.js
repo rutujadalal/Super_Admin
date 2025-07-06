@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(
   cors({
     origin: (origin, callback) => {
-      const allowedOrigins = ["http://127.0.0.1:3000", "http://localhost:3000"]; // Allow both localhost and 127.0.0.1
+      const allowedOrigins = ["http://127.0.0.1:3000", "http://localhost:3000", "https://super-portal.netlify.app/"]; // Allow both localhost and 127.0.0.1
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
