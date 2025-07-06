@@ -11,7 +11,12 @@ app.use(express.json());
 app.use(
   cors({
     origin: (origin, callback) => {
-      const allowedOrigins = ["http://127.0.0.1:3000", "http://localhost:3000", "https://super-portal.netlify.app/"]; // Allow both localhost and 127.0.0.1
+      const allowedOrigins = [
+        "https://super-portal.netlify.app",
+        "http://localhost:3000",
+        "http://localhost:3001",
+        "https://super-admin-ga55.onrender.com",
+      ];
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
@@ -23,6 +28,15 @@ app.use(
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
+
+// CORS headers
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", req.headers.origin || "*");
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  res.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type,Authorization");
+  next();
+});
 
 
 app.use('/api/auth', authRoutes);
