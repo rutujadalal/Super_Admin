@@ -11,7 +11,7 @@ export const Vendor = () => {
   const fetchVendors = async () => {
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch("http://localhost:5000/api/auth/vendors/getVendors", {
+      const response = await fetch("https://super-admin-hg1i.onrender.com/api/auth/vendors/getVendors", {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -47,7 +47,7 @@ export const Vendor = () => {
 
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch(`http://localhost:5000/api/auth/vendors/approveDeactivation/${id}`, {
+      const response = await fetch(`https://super-admin-hg1i.onrender.com/api/auth/vendors/approveDeactivation/${id}`, {
         method: "PUT",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -76,7 +76,7 @@ export const Vendor = () => {
 
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch(`http://localhost:5000/api/auth/vendors/reject-deactivation/${id}`, {
+      const response = await fetch(`https://super-admin-hg1i.onrender.com/api/auth/vendors/reject-deactivation/${id}`, {
         method: "PUT",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -105,7 +105,7 @@ export const Vendor = () => {
 
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch(`http://localhost:5000/api/auth/vendors/approve-reactivation/${id}`, {
+      const response = await fetch(`https://super-admin-hg1i.onrender.com/api/auth/vendors/approve-reactivation/${id}`, {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -134,7 +134,7 @@ export const Vendor = () => {
 
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch(`http://localhost:5000/api/auth/vendors/reject-reactivation/${id}`, {
+      const response = await fetch(`https://super-admin-hg1i.onrender.com/api/auth/vendors/reject-reactivation/${id}`, {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
       });

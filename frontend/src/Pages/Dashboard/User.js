@@ -17,7 +17,7 @@ export const User = () => {
   const fetchAdmins = async () => {
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch("http://localhost:5000/api/auth/getAllAdmins", {
+      const response = await fetch("https://super-admin-hg1i.onrender.com/api/auth/getAllAdmins", {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -79,8 +79,8 @@ export const User = () => {
     try {
       const token = localStorage.getItem("token");
       const url = editingUserId
-        ? `http://localhost:5000/api/auth/update-admin/${editingUserId}`
-        : "http://localhost:5000/api/auth/addRoleBasedAdmin";
+        ? `https://super-admin-hg1i.onrender.com/api/auth/update-admin/${editingUserId}`
+        : "https://super-admin-hg1i.onrender.com/api/auth/addRoleBasedAdmin";
 
       const method = editingUserId ? "PUT" : "POST";
       const requestData = { ...formData };
@@ -133,7 +133,7 @@ export const User = () => {
 
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch(`http://localhost:5000/api/auth/delete-admin/${id}`, {
+      const response = await fetch(`https://super-admin-hg1i.onrender.com/api/auth/delete-admin/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });

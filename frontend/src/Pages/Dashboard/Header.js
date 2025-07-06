@@ -25,7 +25,7 @@ export const Header = ({ isSidebarOpen, setIsSidebarOpen }) => {
     try {
       const token = localStorage.getItem("token");
 
-      const response = await fetch("http://localhost:5000/api/auth/logout", {
+      const response = await fetch("https://super-admin-hg1i.onrender.com/api/auth/logout", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
